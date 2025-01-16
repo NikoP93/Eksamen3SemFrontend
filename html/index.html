@@ -4,19 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/common.css" />
-    <link rel="stylesheet" href="../styles/index.css" />
-    <title>IndexPage</title>
+
+    <title>DronePizza</title>
   </head>
   <body>
-    <nav aria-label="Main navigation">
-      <a href="index.html" class="view-link active">Home</a>
-      <a href="contact.html" class="view-link">Contact</a>
-    </nav>
+   <h1>DronePizza</h1>
     <main>
-      <section class="view-content">
-
-      </section>
+      <div id="deliveryContainer">
+        <table id="tableWrapper">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Expected Delivery Time</th>
+            <th>Pizza</th>
+            <th>Adresse</th>
+            <th>Drone ID</th>
+            <th>Tildel Drone</th>
+          </tr>
+          </thead>
+          <tbody id="tableBody">
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <button id="addDroneBtn" class="button" type="button">Tilføj Drone</button>
     </main>
+
   </body>
-  <script type="module" src="../js/index.js"></script>
+  <script type="module" src="../js/delivery.js"></script>
 </html>
