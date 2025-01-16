@@ -1,4 +1,4 @@
-import {fetchAnyUrl, getIpAdress, postObjectAsJson, postAnyUrl} from "./module.js";
+import {fetchAnyUrl, getIpAdress, postAnyUrl} from "./module.js";
 import {simulatePizzaOrder} from "./simulatePizzaDelivery.js";
 
 console.log("jeg er i deliverytable")
@@ -13,7 +13,7 @@ async function fetchDelivery() {
 }
 
 function updateTable() {
-    console.log("TIMER STARTED")
+    console.log("Timer starter")
     fetchDelivery()
     setTimeout(updateTable, 60000)
 }
@@ -55,7 +55,7 @@ async function addDrone() {
     console.log("Im in addDrone")
     const url = getIpAdress() + "/drones/add"
     const drone = await postAnyUrl(url)
-    console.log("this is the drone created: ", drone)
+    console.log("Det her er drone objetet ", drone)
 }
 
 async function scheduleDrone(deliveryID) {
@@ -78,6 +78,8 @@ async function simulateDelivery() {
 //Kalder update table og starter timeren når man går ind på siden, men ikke hver gang man bruger knapper
 //Bliver kun kaldt når man loader siden
 function initSetup() {
+
+
     const addDroneBtn = document.getElementById("addDroneBtn");
     addDroneBtn.addEventListener("click", () => {
         addDrone()
@@ -86,7 +88,9 @@ function initSetup() {
     simulateDeliveryBtn.addEventListener("click", () => {
         simulateDelivery()
     })
+
     updateTable()
+
     simulatePizzaOrder()
 }
 

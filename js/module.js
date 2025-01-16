@@ -6,7 +6,7 @@ function fetchAnyUrl(url){
     return fetch(url).then(response => response.json());
 }
 
-//En metode til at poste i stedet for at gette.
+//funktion til at poste i stedet for at gette.
 function postAnyUrl(url){
     return fetch(url,{method:"POST"}).then(response => response.json());
 }
