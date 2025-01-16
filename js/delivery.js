@@ -1,5 +1,5 @@
 import {fetchAnyUrl, getIpAdress, postObjectAsJson, postAnyUrl} from "./module.js";
-import{simulatePizzaOrder} from "./simulatePizzaDelivery.js";
+import {simulatePizzaOrder} from "./simulatePizzaDelivery.js";
 
 console.log("jeg er i deliverytable")
 
@@ -55,7 +55,7 @@ async function addDrone() {
     console.log("Im in addDrone")
     const url = getIpAdress() + "/drones/add"
     const drone = await postAnyUrl(url)
-    console.log("this is the drone created: " , drone)
+    console.log("this is the drone created: ", drone)
 }
 
 async function scheduleDrone(deliveryID) {
@@ -64,6 +64,16 @@ async function scheduleDrone(deliveryID) {
     fetchDelivery()
 }
 
+async function simulateDelivery() {
+    const tableBody = document.getElementById("tableBody")
+    const firstRow = tableBody.children[0]
+    const firstColum = firstRow.children[0]
+    const deliveryID = firstColum.innerHTML
+
+    const url = getIpAdress() + "/deliveries/finish/" + deliveryID
+    await postAnyUrl(url)
+    fetchDelivery()
+}
 
 //Kalder update table og starter timeren når man går ind på siden, men ikke hver gang man bruger knapper
 //Bliver kun kaldt når siden loader første gang, sørger for at en eventhandler kun bliver sat på 1 gang
@@ -71,6 +81,10 @@ function initSetup() {
     const addDroneBtn = document.getElementById("addDroneBtn");
     addDroneBtn.addEventListener("click", () => {
         addDrone()
+    })
+    const simulateDeliveryBtn = document.getElementById("simulateDeliveryBtn");
+    simulateDeliveryBtn.addEventListener("click", () => {
+        simulateDelivery()
     })
     updateTable()
     simulatePizzaOrder()
