@@ -76,7 +76,7 @@ async function simulateDelivery() {
 }
 
 //Kalder update table og starter timeren når man går ind på siden, men ikke hver gang man bruger knapper
-//Bliver kun kaldt når siden loader første gang, sørger for at en eventhandler kun bliver sat på 1 gang
+//Bliver kun kaldt når man loader siden
 function initSetup() {
     const addDroneBtn = document.getElementById("addDroneBtn");
     addDroneBtn.addEventListener("click", () => {

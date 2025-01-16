@@ -37,3 +37,51 @@ tr:nth-child(even) {
 
 tr:hover {background-color: #ddd;}
 
+/* General Button Styling */
+button.button {
+  background-color: #9391c9; /* Match the header color */
+  color: white; /* White text for contrast */
+  border: none; /* Remove border for a cleaner look */
+  border-radius: 5px; /* Slightly rounded corners */
+  padding: 10px 15px; /* Add some padding for a comfortable click area */
+  font-size: 14px; /* Set a readable font size */
+  cursor: pointer; /* Change cursor to pointer for better UX */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Add hover effects */
+}
+
+/* Hover Effect */
+button.button:hover {
+  background-color: #6c6aad; /* Slightly darker shade for hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Disabled Buttons */
+button.button:disabled {
+  background-color: #ccc; /* Light gray for disabled state */
+  color: #666; /* Darker gray for text in disabled state */
+  cursor: not-allowed; /* Show not-allowed cursor */
+}
+
+/* Button Placement (optional) */
+td > button.button {
+  margin: 5px; /* Add some space around buttons in table cells */
+}
+
+h1 {
+  text-align: center; /* Center the header */
+  font-family: 'Arial', sans-serif; /* Use a clean, modern font */
+  font-size: 36px; /* Make the header prominent */
+  color: #4c4a80; /* Use a color that complements the table and buttons */
+  margin-top: 20px; /* Add some space above the header */
+  margin-bottom: 20px; /* Add some space below the header */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+  letter-spacing: 1px; /* Slight spacing between letters */
+  font-weight: bold; /* Make it stand out */
+}
+
+/* Optional: Add an underline effect on hover */
+h1:hover {
+  text-decoration: underline;
+}
+
+
